@@ -219,3 +219,109 @@ Next:
 When resuming this project in a new conversation:
 
 **Continue the RHEL/RHCSA lab from this reminder file. Work step by step and update the repository documentation as progress is made.**
+---
+
+## Update — Version 2.0
+
+### RHEL Installation Completed
+
+Red Hat Enterprise Linux 10.2 (Coughlan) has been successfully
+installed on the Lenovo laptop as a physical dual-boot system.
+
+Installation environment:
+
+- RHEL 10.2 x86_64
+- Server with GUI
+- GNOME
+- Wayland
+- UEFI / GPT
+- Red Hat CDN
+- Red Hat registration completed
+
+### Verified Hardware
+
+- AMD Ryzen 7 7735HS
+- AMD Radeon 680M — working with amdgpu
+- Realtek RTL8852BE Wi-Fi — working
+- Wi-Fi connection — working
+- GNOME graphical environment — working
+- Wayland session — confirmed
+- Hungarian keyboard layout — configured
+
+### Final Disk Layout
+
+- EFI — 976 MB
+- Debian ext4 — 690.4 GB
+- Debian swap — 13.7 GB
+- RHEL /boot XFS — 2 GB
+- RHEL LVM PV — 246.8 GB
+
+RHEL logical volumes:
+
+- root — 70 GB XFS
+- swap — 6.7 GB
+- home — 170.1 GB XFS
+
+The Debian partition was reduced from 939.2 GB to 690.4 GB by
+the RHEL Anaconda installer.
+
+### Boot Status
+
+RHEL GRUB detects:
+
+- RHEL 10.2
+- RHEL rescue environment
+- Debian GNU/Linux
+- Debian recovery entries
+- UEFI firmware settings
+
+RHEL first boot: PASS
+
+Debian post-resize boot test: PENDING
+
+### Git / GitHub on RHEL
+
+Completed:
+
+- Git 2.52.0 installed
+- Git identity configured
+- Dedicated ED25519 SSH key generated for RHEL
+- SSH public key added to GitHub
+- GitHub SSH authentication successful
+- `rhel-lab` cloned from GitHub
+
+RHEL repository path:
+
+`/home/joe/Projects/rhel-lab`
+
+### Screenshots
+
+Installation screenshots currently include:
+
+- `01-debian-disk-layout-before-rhel.png`
+- `02-rhel-10.2-boot-usb-created.png`
+- `03-disk-layout-after-rhel-install.png`
+
+Important installation photos/screenshots from the RHEL installer and
+dual-boot process may still need to be added later.
+
+### Next Step
+
+1. Commit and push the RHEL installation documentation.
+2. Reboot the machine.
+3. Select Debian from the GRUB menu.
+4. Verify Debian boots normally after the partition resize.
+5. Verify the Debian filesystem and disk layout.
+6. Return to RHEL.
+7. Continue RHEL post-install configuration.
+8. Begin structured RHCSA labs.
+
+### Working Rule
+
+Continue documenting meaningful RHEL/RHCSA milestones, commands,
+problems and solutions in this repository.
+
+Create screenshots for important milestones and troubleshooting events,
+but not for every individual command.
+
+Commit and push meaningful progress regularly.
